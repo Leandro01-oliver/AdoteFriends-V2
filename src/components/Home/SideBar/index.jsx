@@ -1,30 +1,32 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useContext } from 'react'
 import {
     useDisclosure,
     Flex,
     Box
   } from '@chakra-ui/react';
 import {AiOutlineMenu} from 'react-icons/ai';
-import DrawerSideBar from './Drawer';
-import NavLink from './NavLink';
+import DrawerSideBarHomePage from './Drawer';
 import Logo from './Logo';
 import User from './User';
+import { GlobalProvider } from '../../../../context/globalContext';
+import NavLink from './NavLink';
 
 const SideBar = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
   
+    const { colorMode } = useContext(GlobalProvider);
+
   return (
     <>
 
     <Flex
      w={'70px'}
      h={'100vh'}
-     bg={'#ccc'}
+     bg={colorMode === 'light' ? '#ccc!important' : 'rgba(0,0,0,.5)'}
      py={'1rem'}
      direction={'column'}
     >
-
          <Flex 
          display={'flex'}
          w={'30px'}
@@ -55,7 +57,7 @@ const SideBar = () => {
          <User onOpen={onOpen}/>
     </Flex>
      
-     <DrawerSideBar isOpen={isOpen}  onClose={onClose}/>
+     <DrawerSideBarHomePage isOpen={isOpen}   onClose={onClose}/>
      
     </>
   )

@@ -6,9 +6,7 @@ const Home = () => {
 
   return (
     <>
-        <GlobalContext>
             <HomePage/>
-        </GlobalContext>
     </>
   )
 }

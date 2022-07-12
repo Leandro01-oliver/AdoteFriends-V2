@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {
     Modal,
     ModalOverlay,
@@ -7,12 +7,17 @@ import {
     ModalBody,
     ModalCloseButton,
   } from '@chakra-ui/react'
+import { GlobalProvider } from '../../../../../../../../context/globalContext';
 
 const ModalFilter = (props) => {
 
+  const { colorMode } = useContext(GlobalProvider);
+
   return (
     <>
-  <Modal isOpen={props.isOpen} onClose={props.onClose}>
+  <Modal isOpen={props.isOpen} onClose={props.onClose}
+   bg={colorMode === 'light' ? 'Dark' : 'Light'}
+  >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>

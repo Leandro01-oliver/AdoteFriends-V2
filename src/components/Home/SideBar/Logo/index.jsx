@@ -1,15 +1,18 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 import Image from 'next/image';
 import LogoImg from '../../../../../public/logo.png';
 import Acessibilidade from './Acessibilidade';
+import { GlobalProvider } from '../../../../../context/globalContext';
 
 const Logo = (props) => {
     
+  const { colorMode } = useContext(GlobalProvider);
+
   return (
     <>
        <Flex
-       bg={'#fff'}
+       bg={colorMode === 'light' ? '#fff!important' : 'rgba(250,250,250,.85)'}
        borderRadius={props.onOpen ? '0':'10px'}
        justify={'space-between'}
        align={'center'}

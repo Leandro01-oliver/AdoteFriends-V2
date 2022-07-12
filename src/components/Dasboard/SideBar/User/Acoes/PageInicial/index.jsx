@@ -1,15 +1,17 @@
 import React,{useContext} from 'react'
 import { Flex } from '@chakra-ui/react'
-import {FaSignInAlt,FaSignOutAlt} from 'react-icons/fa'
-import { authGoogle, signOutGoogle } from '../../../../../../../utils/auth'
-import { GlobalProvider } from '../../../../../../../context/globalContext'
+import {AiOutlineGlobal} from 'react-icons/ai'
+import { GlobalProvider } from '../../../../../../../context/globalContext';
 
-const Login = (props) => {
+const PageInicial = () => {
 
   const { colorMode } = useContext(GlobalProvider);
 
   return (
     <>
+    <a 
+    href={'/dashboard'}
+    >
        <Flex
       w={'35px'}
       h={'35px'}
@@ -33,10 +35,11 @@ const Login = (props) => {
         boxShadow:'0 0 10px 0 rgba(0,0,0,.5)'
       }}
      >
-      {props.profile ? <FaSignOutAlt onClick={signOutGoogle} />: <FaSignInAlt onClick={authGoogle}/>}
+      <AiOutlineGlobal/>
      </Flex>
+    </a>
     </>
   )
 }
 
-export default Login
+export default PageInicial

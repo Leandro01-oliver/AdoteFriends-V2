@@ -7,12 +7,12 @@ import {
     DrawerCloseButton,
     ModalFooter
   } from '@chakra-ui/react';
+import Logo from '../../../Home/SideBar/Logo';
 import NavLink from '../NavLink';
-import Logo from '../Logo';
 import User from '../User';
 import { GlobalProvider } from '../../../../../context/globalContext';
 
-const DrawerSideBarHomePage = (props) => {
+const DrawerSideBarDashboard = (props) => {
 
   const { colorMode } = useContext(GlobalProvider);
   
@@ -34,11 +34,11 @@ const DrawerSideBarHomePage = (props) => {
             <DrawerCloseButton />
             <DrawerBody
             >
-                 <Logo/>
-                 <NavLink/>
+                 <Logo />
+                 <NavLink />
             </DrawerBody>
             <ModalFooter>
-            <User/>
+                <User />
             </ModalFooter>
             </DrawerContent>
         </Drawer>
@@ -46,4 +46,4 @@ const DrawerSideBarHomePage = (props) => {
   )
 }
 
-export default DrawerSideBarHomePage
+export default DrawerSideBarDashboard

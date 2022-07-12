@@ -1,5 +1,5 @@
 import {createContext, useState, useEffect} from "react";
-
+import {useColorMode} from '@chakra-ui/react'
 const GlobalProvider = createContext({});
 
 const GlobalContext = ({children}) => {
@@ -9,9 +9,13 @@ const GlobalContext = ({children}) => {
 
     const handlerdashboardActive = () => setdashboardActive(!dashboardActive);
 
+    const { colorMode, toggleColorMode } = useColorMode()
+
     const value = { 
         handlerdashboardActive,
-        dashboardActive
+        dashboardActive,
+        toggleColorMode,
+        colorMode
     }
 
     

@@ -7,7 +7,7 @@ import { GlobalProvider } from '../../../../../context/globalContext'
 const User = (props) => {
 
   const { colorMode } = useContext(GlobalProvider);
-  
+
   return (
     <>
        <Flex
