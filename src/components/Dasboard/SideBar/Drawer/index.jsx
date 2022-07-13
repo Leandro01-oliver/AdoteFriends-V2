@@ -7,7 +7,7 @@ import {
     DrawerCloseButton,
     ModalFooter
   } from '@chakra-ui/react';
-import Logo from '../../../Home/SideBar/Logo';
+import Logo from '../Logo';
 import NavLink from '../NavLink';
 import User from '../User';
 import { GlobalProvider } from '../../../../../context/globalContext';

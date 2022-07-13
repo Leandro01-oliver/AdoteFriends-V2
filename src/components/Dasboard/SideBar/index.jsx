@@ -3,9 +3,9 @@ import {Flex,useDisclosure,Box} from '@chakra-ui/react';
 import { GlobalProvider } from '../../../../context/globalContext';
 import {AiOutlineMenu} from 'react-icons/ai'
 import DrawerSideBarDashboard from './Drawer';
-import Logo from '../../Home/SideBar/Logo';
 import NavLink from './NavLink';
 import User from './User';
+import Logo from './Logo'
 
 const SideBar = () => {
 
