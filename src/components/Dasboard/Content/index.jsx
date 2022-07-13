@@ -6,6 +6,7 @@ const Content = () => {
     <>
       <Box
       w={'calc(100% - 70px)'}
+      p={'1rem'}
       >
         Conteudo da Home do DashBoard
       </Box>
