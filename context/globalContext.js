@@ -11,6 +11,9 @@ const GlobalContext = ({children}) => {
 
     const { colorMode, toggleColorMode } = useColorMode()
 
+    const [user,setUser] = useState([]);
+
+    
     const value = { 
         handlerdashboardActive,
         dashboardActive,
@@ -18,6 +21,9 @@ const GlobalContext = ({children}) => {
         colorMode
     }
 
+    useEffect(()=>{
+     
+    },[])
     
     return (
         <GlobalProvider.Provider 

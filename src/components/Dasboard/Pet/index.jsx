@@ -1,12 +1,15 @@
 import React,{useContext} from 'react'
-import { Box, Flex,InputGroup,Input,InputRightElement } from '@chakra-ui/react'
+import { Box, Flex,InputGroup,Input,InputRightElement,useDisclosure } from '@chakra-ui/react'
 import { FiEdit } from 'react-icons/fi'
 import { MdLibraryAdd } from 'react-icons/md'
 import { GlobalProvider } from '../../../../context/globalContext'
+import ModalPet from './Modal'
 
 const PetPage = () => {
 
     const { colorMode } = useContext(GlobalProvider);
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
@@ -46,6 +49,7 @@ const PetPage = () => {
                         border={colorMode === 'light' ? '2px solid rgba(250,0,0,.75)':'2px solid rgba(0,0,0,.75)'}
                         color={colorMode === 'light'? 'rgba(250,0,0,.75)':'#000'}
                         bg={colorMode === 'light' ? '#fff' : 'transparent'}
+                        onClick={onOpen}
                         _hover={colorMode === 'light' ? {
                           backgroundColor:'rgba(250,0,0,.75)',
                           color:'#fff',
@@ -86,6 +90,7 @@ const PetPage = () => {
                         </Flex>
                </Flex>
             </Flex>
+            <ModalPet isOpen={isOpen} onClose={onClose} />
         </Box>
     </>
   )
